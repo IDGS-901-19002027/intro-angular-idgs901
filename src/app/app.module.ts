@@ -8,14 +8,8 @@ import { IricComponent } from './grupos/iric/iric.component';
 import { MenuComponent } from './grupos/menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { SumaComponent } from './grupos/formularios/suma/suma.component';
-import { OperasBasComponent } from './grupos/formularios/operas-bas/operas-bas.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { OperasModule } from './grupos/formularios/operas/operas.module';
 
 @NgModule({
   declarations: [
@@ -25,18 +19,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ievnComponent,
     IricComponent,
     MenuComponent,
-    SumaComponent,
-    OperasBasComponent
+    SumaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatRadioModule
+    OperasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
