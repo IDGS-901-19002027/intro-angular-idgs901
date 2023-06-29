@@ -1,0 +1,89 @@
+<h1 class="text-center">Registro de Alumnos</h1>
+<div class="row">
+    <div class="col-6">
+        <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
+            <div class="mb-4">
+                <label for="matricula" class="form-label">Matrícula</label>
+                <input type="text" class="form-control" formControlName="matricula" id="matricula" name="matricula"
+                    required>
+                <div *ngIf="alumnoForm.get('matricula')?.touched && 
+                            alumnoForm.get('matricula')?.errors?.['required']" class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <div *ngIf="alumnoForm.get('matricula')?.touched && 
+                            alumnoForm.get('matricula')?.errors?.['minlength']" class="alert alert-danger">
+                    La matrícula debe ser más largo que
+                    {{alumnoForm.get('matricula')?.errors?.['minlength']?.requiredLength}}
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre" id="nombre" name="nombre" required>
+                <div *ngIf="alumnoForm.get('nombre')?.touched && 
+                            alumnoForm.get('nombre')?.errors?.['required']" class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+                <div *ngIf="alumnoForm.get('nombre')?.touched && 
+                            alumnoForm.get('nombre')?.errors?.['minlength']" class="alert alert-danger">
+                    El nombre debe ser más largo que
+                    {{alumnoForm.get('nombre')?.errors?.['minlength']?.requiredLength}}
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="text" class="form-control" formControlName="edad" id="edad" name="edad" required>
+                <div *ngIf="alumnoForm.get('edad')?.touched && 
+                            alumnoForm.get('edad')?.errors?.['required']" class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="text" class="form-control" formControlName="correo" id="correo" name="correo" required>
+                <div *ngIf="alumnoForm.get('correo')?.touched && 
+                            alumnoForm.get('correo')?.errors?.['required']" class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="foto" class="form-label">Foto</label>
+                <input type="text" class="form-control" formControlName="foto" id="foto" name="foto">
+            </div>
+            <div class="mb-4">
+                <label for="calif" class="form-label">Calificación</label>
+                <input type="text" class="form-control" formControlName="calif" id="calif" name="calif" required>
+                <div *ngIf="alumnoForm.get('calif')?.touched && 
+                            alumnoForm.get('calif')?.errors?.['required']" class="alert alert-danger">
+                    Este campo es requerido
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-4 float-end">
+                <button (click)="obtenerDatos()" class="btn btn-success btn-lg" type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <p>Registros</p>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Matrícula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{matricula}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{edad}}</td>
+                    <td>{{correo}}</td>
+                    <td>{{calif}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
