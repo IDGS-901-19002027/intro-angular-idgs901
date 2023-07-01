@@ -6,7 +6,7 @@ import { OperasBasComponent } from "./grupos/formularios/operas-bas/operas-bas.c
 const routes:Routes = [
     {path: '', redirectTo: '/home', pathMatch:'full'},
     {path: 'IricComponent', component: IricComponent},
-    {path: 'OperasBas', component: OperasBasComponent},
+    {path: 'OperasBasComponent', component: OperasBasComponent},
 ];
 
 @NgModule({
